@@ -2,7 +2,7 @@
 
 SnapSwiftData is a library to extend SwiftData with access to CoreData objects.
 
-This package is part of the [SNAP](https://github.com/simonnickel/snap-abstract) suite.
+> This package is part of the [SNAP](https://github.com/simonnickel/snap-abstract) suite.
 
 SwiftData is build on CoreData, but does not completely cover its functionality. SnapSwiftData tries to fill some gaps, so you do not need to create a duplicated CoreData stack.
 
