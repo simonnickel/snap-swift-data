@@ -17,18 +17,16 @@ public final class PersistentHistoryMonitor {
 	/// An `AsyncStream` to stream all `PersistentIdentifier` that are handled by `PersistentHistoryTracking` (send via  `NSPersistentStoreRemoteChange` notification).
 	public let remoteChangeStream: AsyncStream<PersistentIdentifier>
 	
-	private let continuation: AsyncStream<PersistentIdentifier>.Continuation?
+	private let continuation: AsyncStream<PersistentIdentifier>.Continuation
 	
 	public init(modelContainer: ModelContainer, excludeAuthors: [String]) {
 		self.modelContainer = modelContainer
 		
 		monitor = PersistentHistoryMonitorActor(modelContainer: modelContainer)
 		
-		var tempContinuation: AsyncStream<PersistentIdentifier>.Continuation?
-		self.remoteChangeStream = AsyncStream { (continuation: AsyncStream<PersistentIdentifier>.Continuation) -> Void in
-			tempContinuation = continuation
-		}
-		self.continuation = tempContinuation
+		let (stream, continuation) = AsyncStream.makeStream(of: PersistentIdentifier.self)
+		self.remoteChangeStream = stream
+		self.continuation = continuation
 		
 		setupMonitor(excludeAuthors: excludeAuthors)
 	}
@@ -45,7 +43,7 @@ public final class PersistentHistoryMonitor {
 			await monitor.register(excludeAuthors: excludeAuthors) { change in
 				
 				if let id = change.changedObjectID.persistentIdentifier {
-					continuation?.yield(id)
+					continuation.yield(id)
 				}
 				
 			}
