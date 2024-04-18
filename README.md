@@ -1,8 +1,7 @@
 # SnapSwiftData
+> This package is part of the [SNAP](https://github.com/simonnickel/snap-abstract) suite.
 
 This package improves interoperability between SwiftData and CoreData. Provides SwiftData with access to CoreData objects and Persistent History Tracking.
-
-> This package is part of the [SNAP](https://github.com/simonnickel/snap-abstract) suite.
 
 SwiftData is build on CoreData, but does not completely cover its functionality. SnapSwiftData tries to fill some gaps, so you do not need to create a duplicated CoreData stack.
 
