@@ -11,24 +11,37 @@ import SwiftData
 public final class PersistentHistoryMonitor {
 		
 	private let modelContainer: ModelContainer
+	
 	private let monitor: PersistentHistoryMonitorActor
+	
+	/// An `AsyncStream` to stream all `PersistentIdentifier` that are handled by `PersistentHistoryTracking` (send via  `NSPersistentStoreRemoteChange` notification).
+	public let remoteChangeStream: AsyncStream<PersistentIdentifier>
+	
+	private let continuation: AsyncStream<PersistentIdentifier>.Continuation?
 	
 	public init(modelContainer: ModelContainer, excludeAuthors: [String]) {
 		self.modelContainer = modelContainer
 		
 		monitor = PersistentHistoryMonitorActor(modelContainer: modelContainer)
+		
+		var tempContinuation: AsyncStream<PersistentIdentifier>.Continuation?
+		self.remoteChangeStream = AsyncStream { (continuation: AsyncStream<PersistentIdentifier>.Continuation) -> Void in
+			tempContinuation = continuation
+		}
+		self.continuation = tempContinuation
+		
 		setupMonitor(excludeAuthors: excludeAuthors)
 	}
 
 	
-	// MARK: - PersistenHistoryTracking
+	// MARK: - PersistentHistoryTracking
 	
 	private func setupMonitor(excludeAuthors: [String]) {
 		
 		let monitor = self.monitor
 		let continuation = self.continuation
 		
-		Task.detached { // TODO: Does this really need to be detached? Should this be executed on the ModelActor?
+		Task {
 			await monitor.register(excludeAuthors: excludeAuthors) { change in
 				
 				if let id = change.changedObjectID.persistentIdentifier {
@@ -39,13 +52,5 @@ public final class PersistentHistoryMonitor {
 		}
 		
 	}
-	
-	public lazy var remoteChangeStream: AsyncStream<PersistentIdentifier> = {
-		AsyncStream { (continuation: AsyncStream<PersistentIdentifier>.Continuation) -> Void in
-			self.continuation = continuation
-		}
-	}()
-	
-	private var continuation: AsyncStream<PersistentIdentifier>.Continuation?
 	
 }
