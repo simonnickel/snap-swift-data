@@ -30,6 +30,10 @@ public final class PersistentHistoryMonitor {
 		
 		setupMonitor(excludeAuthors: excludeAuthors)
 	}
+	
+	deinit {
+		continuation.finish()
+	}
 
 	
 	// MARK: - PersistentHistoryTracking
