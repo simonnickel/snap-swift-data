@@ -1,11 +1,22 @@
-# SnapSwiftData
+<!-- Copy badges from SPI -->
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fsimonnickel%2Fsnap-swift-data%2Fbadge%3Ftype%3Dplatforms)](https://swiftpackageindex.com/simonnickel/snap-swift-data)
+[![](https://img.shields.io/endpoint?url=https%3A%2F%2Fswiftpackageindex.com%2Fapi%2Fpackages%2Fsimonnickel%2Fsnap-swift-data%2Fbadge%3Ftype%3Dswift-versions)](https://swiftpackageindex.com/simonnickel/snap-swift-data) 
+
 > This package is part of the [SNAP](https://github.com/simonnickel/snap-abstract) suite.
+
+
+# SnapSwiftData
 
 This package improves interoperability between SwiftData and CoreData. Provides SwiftData with access to CoreData objects and Persistent History Tracking.
 
 SwiftData is build on CoreData, but does not completely cover its functionality. SnapSwiftData tries to fill some gaps, so you do not need to create a duplicated CoreData stack.
 
 The package is heavily inspired by https://github.com/fatbobman/SwiftDataKit
+
+[![Documentation][documentation badge]][documentation] 
+
+[documentation]: https://swiftpackageindex.com/simonnickel/snap-swift-data/main/documentation/snapswiftdata
+[documentation badge]: https://img.shields.io/badge/Documentation-DocC-blue
 
 
 ## Features
