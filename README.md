@@ -32,7 +32,7 @@ The package is heavily inspired by https://github.com/fatbobman/SwiftDataKit
 
 The implementation relies on current CoreData / SwiftData implementation details. This means it might break with future versions of SwiftData. Please use carefully.
 
-This should not be necessary at all and supported by SwiftData (FB13577205).
+Nothing in this package should not be necessary at all and be supported by SwiftData (FB13577205).
 
 
 ## Good to know
