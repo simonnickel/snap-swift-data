@@ -7,7 +7,7 @@
 
 # SnapSwiftData
 
-This package improves interoperability between SwiftData and CoreData. Provides SwiftData with access to CoreData objects and Persistent History Tracking.
+This package improves interoperability between SwiftData and CoreData. It provides SwiftData with access to CoreData objects and Persistent History Tracking.
 
 SwiftData is build on CoreData, but does not completely cover its functionality. SnapSwiftData tries to fill some gaps, so you do not need to create a duplicated CoreData stack.
 
