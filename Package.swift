@@ -21,10 +21,6 @@ let package = Package(
         .target(
             name: "SnapSwiftData"
 		),
-        .testTarget(
-            name: "SnapSwiftDataTests",
-            dependencies: ["SnapSwiftData"]
-		),
     ],
 	swiftLanguageVersions: [.version("6")]
 )
