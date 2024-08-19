@@ -1,8 +1,6 @@
 //
-//  PersistentHistoryMonitor.swift
-//  SnapSwiftData
-//
-//  Created by Simon Nickel on 02.02.24.
+//  SNAP - https://github.com/simonnickel/snap
+//  Created by Simon Nickel
 //
 
 import Foundation
