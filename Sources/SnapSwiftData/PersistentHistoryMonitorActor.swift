@@ -10,7 +10,7 @@ import Combine
 import OSLog
 
 /// NSPersistentHistoryChange has to move out of ModelActor. Should not change and therefore be just Sendable.
-extension NSPersistentHistoryChange: @unchecked Sendable { }
+extension NSPersistentHistoryChange: @unchecked @retroactive Sendable { }
 
 /// Consumes PersistentHistoryTracking events via Combine and posts them to the change handler (see PersistentHistoryMonitor for consumption).
 @ModelActor 

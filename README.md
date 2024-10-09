@@ -5,6 +5,11 @@
 > This package is part of the [SNAP](https://github.com/simonnickel/snap) suite.
 
 
+
+// TODO: Checkout WWDC24 changes to SwiftData regarding history tracking.
+
+
+
 # SnapSwiftData
 
 This package improves interoperability between SwiftData and CoreData. It provides SwiftData with access to CoreData objects and Persistent History Tracking.
