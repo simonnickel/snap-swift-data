@@ -24,6 +24,13 @@ The package is heavily inspired by https://github.com/fatbobman/SwiftDataKit
 [documentation badge]: https://img.shields.io/badge/Documentation-DocC-blue
 
 
+## Requirements
+
+- iOS 18+, macOS 15+
+- Swift 6.3
+- Dependencies: none
+
+
 ## Features
 
 - Extensions
