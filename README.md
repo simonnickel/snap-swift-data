@@ -5,11 +5,6 @@
 > This package is part of the [SNAP](https://github.com/simonnickel/snap) suite.
 
 
-
-// TODO: Checkout WWDC24 changes to SwiftData regarding history tracking.
-
-
-
 # SnapSwiftData
 
 This package improves interoperability between SwiftData and CoreData. It provides SwiftData with access to CoreData objects and Persistent History Tracking.
@@ -36,7 +31,7 @@ The package is heavily inspired by https://github.com/fatbobman/SwiftDataKit
 - Extensions
 -- ModelContext.existingModel(for:)
 -- NSManagedObjectID+PersistentIdentifier (by https://useyourloaf.com/blog/swiftdata-fetching-an-existing-object/)
-- Persistent History Tracking (https://fatbobman.com/en/posts/persistent-history-tracking-in-swiftdata/)
+- Persistent History Tracking (https://fatbobman.com/en/posts/persistent-history-tracking-in-swiftdata/), see [TODO-1](docs/todo/todos.md)
 - DataManager: A wrapper around ModelContainer with Persistent History Tracking.
 
 
