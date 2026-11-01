@@ -3,19 +3,19 @@
 import PackageDescription
 
 let package = Package(
-    name: "snap-swift-data",
+	name: "snap-swift-data",
 	platforms: [
-		.iOS(.v18), .macOS(.v15)
+		.iOS(.v18), .macOS(.v15),
 	],
-    products: [
-        .library(
-            name: "SnapSwiftData",
-            targets: ["SnapSwiftData"]
+	products: [
+		.library(
+			name: "SnapSwiftData",
+			targets: ["SnapSwiftData"],
 		),
-    ],
-    targets: [
-        .target(
-            name: "SnapSwiftData"
+	],
+	targets: [
+		.target(
+			name: "SnapSwiftData",
 		),
-    ],
+	],
 )
